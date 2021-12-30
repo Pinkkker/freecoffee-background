@@ -104,7 +104,7 @@ export default {
 }
 </script>
 
-<style>
+<style scoped>
 .el-row {
   margin-top: 30px;
 }
@@ -114,9 +114,8 @@ export default {
   margin: 5px;
   padding: 25px;
   background-color: white;
-  box-shadow: 2px 2px 2px 1px rgba(0, 0, 0, 0.2);
   border-radius: 5px;
-  border-top: 3px blue solid;
+  border: 2px rgba(0, 0, 0, 0.3) outset;
 }
 
 .title {

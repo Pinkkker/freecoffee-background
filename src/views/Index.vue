@@ -5,7 +5,7 @@
         <el-menu-item v-for="(item, i) in items" :key="i" :index="item.path">
           <template>
               <i :class="item.icon"></i>
-              <span slot="title"> {{ item.title }}</span>
+              <span slot="title">{{ item.title }}</span>
           </template>          
         </el-menu-item>
       </el-menu>
@@ -19,7 +19,9 @@
         </div>
       </el-header>
       <el-main>
-        <router-view @changeName="changeName"/>
+        <transition name="fade">
+          <router-view @changeName="changeName"/>
+        </transition>
       </el-main>
     </el-container>
   </el-container>
@@ -40,7 +42,8 @@ export default {
         isCollapse: true,
         items:[
           {path:'/dashboard',title:'仪表盘',icon:'el-icon-odometer'},
-          {path:'/review',title:'发帖管理',icon:'el-icon-chat-line-round'},
+          {path:'/user',title:'用户管理',icon:'el-icon-user-solid'},
+          {path:'/post',title:'帖子管理',icon:'el-icon-chat-line-round'},
           {path:'/info',title:'修改信息',icon:'el-icon-setting'}
         ]
       };
@@ -121,5 +124,12 @@ export default {
 
 .el-main {
   background-color: #f4f6f9;
+}
+
+.fade-enter-active {
+  transition: opacity .8s;
+}
+.fade-enter {
+  opacity: 0;
 }
 </style>

@@ -3,7 +3,8 @@ import Router from 'vue-router'
 import Login from './views/Login.vue'
 import Index from './views/Index.vue'
 import Dashboard from './views/Dashboard/index.vue'
-import Review from './views/Review/index.vue'
+import User from './views/User/index.vue'
+import Post from './views/Post/index.vue'
 import Info from './views/Info/index.vue'
 
 Vue.use(Router)
@@ -24,9 +25,13 @@ export default new Router({
                     name: 'Dashboard',
                     component: Dashboard,
                 }, {
-                    path: '/review',
-                    name: 'Review',
-                    component: Review,
+                    path: '/user',
+                    name: 'User',
+                    component: User,
+                }, {
+                    path: '/post',
+                    name: 'Post',
+                    component: Post,
                 }, {
                     path: '/info',
                     name: 'Info',
