@@ -19,7 +19,7 @@
         </div>
       </el-header>
       <el-main>
-        <router-view/>
+        <router-view @changeName="changeName"/>
       </el-main>
     </el-container>
   </el-container>
@@ -65,6 +65,9 @@ export default {
     },
     changeCollapse() {
       this.isCollapse = !this.isCollapse;
+    },
+    changeName (name) {
+      this.username = name;
     }
   },
 };

@@ -60,6 +60,7 @@ export default {
               type: 'error'
             });
           } else {
+            this.$emit('changeName', this.username);
             this.$message({
               showClose: true,
               message: "修改成功",
