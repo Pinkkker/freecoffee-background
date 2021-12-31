@@ -44,6 +44,7 @@ export default {
           {path:'/dashboard',title:'仪表盘',icon:'el-icon-odometer'},
           {path:'/user',title:'用户管理',icon:'el-icon-user-solid'},
           {path:'/post',title:'帖子管理',icon:'el-icon-chat-line-round'},
+          {path:'/tech',title:'技术栈管理',icon:'el-icon-notebook-1'},
           {path:'/info',title:'修改信息',icon:'el-icon-setting'}
         ]
       };

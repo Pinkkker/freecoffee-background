@@ -7,22 +7,27 @@
       <el-table-column
         prop="title"
         label="标题"
-        width="180">
+        width="150">
       </el-table-column>
       <el-table-column
         prop="contents"
         label="内容"
-        width="180">
+        width="150">
       </el-table-column>
       <el-table-column
         prop="commentNumber"
         label="评论数"
-        width="180">
+        width="150">
       </el-table-column>
       <el-table-column
         prop="starred"
         label="标星数"
-        width="180">
+        width="150">
+      </el-table-column>
+      <el-table-column
+        prop="status"
+        label="状态"
+        width="150">
       </el-table-column>
       <el-table-column
         prop="time"
@@ -48,7 +53,7 @@ const axios = require('axios').default;
 
 export default {
   beforeRouteEnter (to, from, next) {
-    axios.get("/api/v1/posts",{params: {pageSize: 10,pageNum: 1,}})
+    axios.get("/admin/posts",{params: {pageSize: 10,pageNum: 1,}})
       .then(response => next(vm=>{vm.postList = response.data.data}));
   },
 	name: "Post",

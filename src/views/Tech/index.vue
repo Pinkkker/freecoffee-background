@@ -1,37 +1,18 @@
 <template>
   <div>
       <el-table
-      :data="userList"
+      :data="techList"
       stripe
       style="width: 100%">
       <el-table-column
         prop="name"
-        label="姓名"
-        width="150">
-      </el-table-column>
-      <el-table-column
-        prop="age"
-        label="年龄"
-        width="150">
-      </el-table-column>
-      <el-table-column
-        prop="phoneNumber"
-        label="电话号码"
-        width="150">
-      </el-table-column>
-      <el-table-column
-        prop="authorization"
-        label="权限"
-        width="150">
+        label="名称"
+        width="180">
       </el-table-column>
       <el-table-column
         prop="status"
         label="状态"
-        width="150">
-      </el-table-column>
-      <el-table-column
-        prop="registrationTime"
-        label="注册时间">
+        width="180">
       </el-table-column>
       <el-table-column label="操作">
         <template slot-scope="scope">
@@ -53,13 +34,13 @@ const axios = require('axios').default;
 
 export default {
   beforeRouteEnter (to, from, next) {
-    axios.get("/admin/login")
-      .then(response => next(vm=>{vm.userList = response.data.data}));
+    axios.get("/admin/techs")
+      .then(response => next(vm=>{vm.techList = response.data.data}));
   },
-	name: "User",
+	name: "Tech",
   data() {
     return {
-      userList: [],
+      techList: [],
     }
   },
   methods: {

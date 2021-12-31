@@ -5,6 +5,7 @@ import Index from './views/Index.vue'
 import Dashboard from './views/Dashboard/index.vue'
 import User from './views/User/index.vue'
 import Post from './views/Post/index.vue'
+import Tech from './views/Tech/index.vue'
 import Info from './views/Info/index.vue'
 
 Vue.use(Router)
@@ -32,6 +33,10 @@ export default new Router({
                     path: '/post',
                     name: 'Post',
                     component: Post,
+                }, {
+                    path: '/tech',
+                    name: 'Tech',
+                    component: Tech,
                 }, {
                     path: '/info',
                     name: 'Info',

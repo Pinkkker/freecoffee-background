@@ -21,10 +21,24 @@
             <i class="el-icon-s-promotion"></i>
             <div>
               <div class="title">帖子总数</div>
-              <div>{{postListNum}}</div>
+              <div>{{postList.length}}</div>
             </div>
           </div>
           <div class="link" @click="goPost()">
+            more info
+          </div>
+        </div>
+      </el-col>
+      <el-col :span="5">
+        <div class="container" id="tech">
+          <div class="main">
+            <i class="el-icon-ship"></i>
+            <div>
+              <div class="title">技术栈总数</div>
+              <div>{{techList.length}}</div>
+            </div>
+          </div>
+          <div class="link" @click="goTech()">
             more info
           </div>
         </div>
@@ -40,16 +54,19 @@ export default {
 	name: "Dashboard",
   async beforeRouteEnter (to, from, next) {
     let userResponse = await axios.get("/admin/login");
-    let postResponse = await axios.get("/api/v1/posts",{params: {pageSize: 1,pageNum: 1,}})
+    let postResponse = await axios.get("/admin/posts");
+    let techResponse = await axios.get("/admin/techs");
     next(vm => {
       vm.userList = userResponse.data.data;
-      vm.postListNum = postResponse.data.totalNum;
+      vm.postList = postResponse.data.data;
+      vm.techList = techResponse.data.data;
     });
   },
   data() {
     return {
       userList: [],
-      postListNum: 0,
+      postList: [],
+      techList: [],
     };
   },
   methods: {
@@ -59,6 +76,9 @@ export default {
     goPost() {
       this.$router.push('/post')
     },
+    goTech() {
+      this.$router.push('/tech')
+    }
   },
 }
 </script>
@@ -72,16 +92,20 @@ export default {
 }
 
 #user {
-  background-color: rgba(230, 100, 100, 1);
+  background-color: rgb(211, 88, 88);
 }
 
 #post {
-  background-color: rgba(100, 180, 100, 1);
+  background-color: rgb(65, 179, 65);
+}
+
+#tech {
+  background-color: rgb(63, 126, 207);
 }
 
 .link {
   cursor: pointer;
-  background-color: rgba(0, 0, 0, 0.1);
+  background-color: rgba(0, 0, 0, 0.2);
 }
 
 .main {
