@@ -1,7 +1,7 @@
 <template>
   <el-container>
     <el-aside width="collapse">
-      <el-menu class="el-menu-vertical-demo" :collapse="isCollapse" active-text-color="#ffffff" text-color="#909399" background-color="#304156" :default-active="$route.path" router>
+      <el-menu class="el-menu-vertical-demo" :collapse="isCollapse" active-text-color="#ffffff" text-color="#909399" background-color="#304156" :default-active="this.$route.path" router>
         <el-menu-item v-for="(item, i) in items" :key="i" :index="item.path">
           <template>
               <i :class="item.icon"></i>
@@ -37,17 +37,17 @@ export default {
       .then(response => next(vm=>{vm.username = response.data.data.name}));
   },
   data() {
-      return {
-        username: "",
-        isCollapse: true,
-        items:[
-          {path:'/dashboard',title:'仪表盘',icon:'el-icon-odometer'},
-          {path:'/user',title:'用户管理',icon:'el-icon-user-solid'},
-          {path:'/post',title:'帖子管理',icon:'el-icon-chat-line-round'},
-          {path:'/tech',title:'技术栈管理',icon:'el-icon-notebook-1'},
-          {path:'/info',title:'修改信息',icon:'el-icon-setting'}
-        ]
-      };
+    return {
+      username: "",
+      isCollapse: true,
+      items:[
+        {path:'/dashboard',title:'仪表盘',icon:'el-icon-odometer'},
+        {path:'/user',title:'用户管理',icon:'el-icon-user-solid'},
+        {path:'/post',title:'帖子管理',icon:'el-icon-chat-line-round'},
+        {path:'/tech',title:'技术栈管理',icon:'el-icon-notebook-1'},
+        {path:'/info',title:'修改信息',icon:'el-icon-setting'}
+      ]
+    };
   },
   methods: {
     exit() {

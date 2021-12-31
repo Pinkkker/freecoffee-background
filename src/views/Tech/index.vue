@@ -34,8 +34,7 @@ const axios = require('axios').default;
 
 export default {
   beforeRouteEnter (to, from, next) {
-    axios.get("/admin/techs")
-      .then(response => next(vm=>{vm.techList = response.data.data}));
+    next(vm => vm.getData());
   },
 	name: "Tech",
   data() {
@@ -44,6 +43,10 @@ export default {
     }
   },
   methods: {
+    getData() {
+      axios.get("/admin/techs")
+      .then(response => this.techList = response.data.data);
+    },
     handleEdit(index, row) {
       console.log(index, row);
       this.$message({
@@ -59,6 +62,12 @@ export default {
 }
 </script>
 
-<style>
+<style scoped>
+.el-button {
+  margin-right: 10px;
+}
 
+.el-input {
+  margin-bottom: 10px;
+}
 </style>
