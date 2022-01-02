@@ -12,7 +12,10 @@
     </el-aside>
     <el-container>
       <el-header>
-        <i class="el-icon-s-operation switch" @click="changeCollapse()"></i>
+        <div class="header">
+          <i class="el-icon-s-operation switch" @click="changeCollapse()"></i>
+          <router-link to="/dashboard">dashboard</router-link>
+        </div>
         <div class="header">
           <div>{{username}}</div>
           <el-button size="small" type="danger" @click="exit()">退出</el-button>
@@ -113,6 +116,11 @@ export default {
   display: flex;
   justify-content: space-between;
   align-items: center;
+}
+
+.header > a {
+  text-decoration:none;
+  color:rgba(0, 0, 0, .5);
 }
 
 .switch {

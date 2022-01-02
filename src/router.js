@@ -15,11 +15,12 @@ export default new Router({
         {
             path: '/login',
             name: 'Login',
-            component: Login,   // `/login`路径访问Login组件
+            component: Login,
         }, {
             path: '/index',
             name: 'Index',
-            component: Index,   // `/balance`路径访问Balance组件
+            component: Index,
+            redirect: '/dashboard',
             children: [
                 {
                     path: '/dashboard',
