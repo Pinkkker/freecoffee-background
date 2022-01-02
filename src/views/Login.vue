@@ -32,7 +32,7 @@ export default {
       if (!(/^[\w|\u4e00-\u9fa5]+$/.test(this.username))) {
         this.$message({
           showClose: true,
-          message: '您输入的用户名有误!',
+          message: '您输入的用户名不符合规范!',
           type: 'error'
         });
         return;

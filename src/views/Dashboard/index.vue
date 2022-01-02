@@ -71,13 +71,13 @@ export default {
   },
   methods: {
     goUser() {
-      this.$router.push('/user')
+      this.$router.push('/user');
     },
     goPost() {
-      this.$router.push('/post')
+      this.$router.push('/post');
     },
     goTech() {
-      this.$router.push('/tech')
+      this.$router.push('/tech');
     }
   },
 }

@@ -132,7 +132,7 @@ export default {
 }
 
 .el-main {
-  background-color: #f4f6f9;
+  background-color: #e9ecef;
 }
 
 .fade-enter-active {
